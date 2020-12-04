@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2020/11/27 16:41:13.309,=rtl.dcp</Transaction>
+    <Transaction>2020/11/27 16:41:37.714,C:\Users\Arth\Documents\Embarcadero\Studio\Projects\RelogioDigital.dproj=C:\Users\Arth\Documents\Embarcadero\Studio\Projects\Package1.dproj</Transaction>
+    <Transaction>2020/11/27 16:42:05.549,C:\Users\Arth\Desktop\Matheus\Projetos\Desktop\Delphi\Componentes\RelogioDigital\RelogioDigital.dproj=C:\Users\Arth\Documents\Embarcadero\Studio\Projects\RelogioDigital.dproj</Transaction>
+    <Transaction>2020/11/27 16:44:13.477,=C:\Users\Arth\Desktop\Matheus\Projetos\Desktop\Delphi\Componentes\RelogioDigital\RelogioDigital.pas</Transaction>
+    <Transaction>2020/11/27 16:44:13.518,=vcl.dcp</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,109 @@
+unit RelogioDigital;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Vcl.Controls, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TLanguageSystemFormat = (lsEnglish,lsPortuguese);
+  TFormatDisplay = (fdComplete,fdCompress,fdOnlyDate,fdOnlyHours);
+  TRelogioDigital = class(TLabel)
+  private
+    fsFormatDisplay: TFormatDisplay;
+    { Private declarations }
+    DisplayFormat : String;
+    fsLanguage: TLanguageSystemFormat;
+    procedure TimerTimer(Sender: TObject);
+    procedure RefreshTime;
+    procedure SetDisplayFormat;
+    procedure SetFormatDisplay(const Value: TFormatDisplay);
+    procedure SetLanguage(const Value: TLanguageSystemFormat);
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    procedure Start;
+  published
+    { Published declarations }
+    property FormatDisplay : TFormatDisplay read fsFormatDisplay write SetFormatDisplay;
+    property Language      : TLanguageSystemFormat read fsLanguage write SetLanguage;
+  end;
+
+procedure Register;
+
+implementation
+
+procedure Register;
+begin
+  RegisterComponents('Exemplos', [TRelogioDigital]);
+end;
+
+{ TRelogioDigital }
+
+procedure TRelogioDigital.RefreshTime;
+begin
+      Self.Caption := FormatDateTime(DisplayFormat,now);
+      Self.Update;
+end;
+
+procedure TRelogioDigital.SetDisplayFormat;
+begin
+  case fsFormatDisplay of
+    fdComplete:
+    begin
+      case fsLanguage of
+        lsEnglish:    DisplayFormat    := 'mmmm, dd, yyyy, hh:mm:ss';
+        lsPortuguese: DisplayFormat := 'dd, mmmm, yyyy, hh:mm:ss';
+      end;
+    end;
+
+    fdCompress:
+    begin
+      case fsLanguage of
+        lsEnglish:    DisplayFormat := 'mm/dd/yyyy hh:mm:ss';
+        lsPortuguese: DisplayFormat := 'dd/mm/yyyy hh:mm:ss';
+      end;
+    end;
+
+    fdOnlyDate:
+    begin
+      case fsLanguage of
+        lsEnglish:    DisplayFormat := 'mm/dd/yyyy';
+        lsPortuguese: DisplayFormat := 'dd/mm/yyyy';
+      end;
+    end;
+
+    fdOnlyHours: DisplayFormat := 'hh:mm:ss';
+  end;
+end;
+
+procedure TRelogioDigital.SetFormatDisplay(const Value: TFormatDisplay);
+begin
+  fsFormatDisplay := Value;
+end;
+
+procedure TRelogioDigital.SetLanguage(const Value: TLanguageSystemFormat);
+begin
+  fsLanguage := Value;
+end;
+
+procedure TRelogioDigital.Start;
+  var Timer : TTimer;
+begin
+  Timer          := TTimer.Create(Self);
+  Timer.Name     := 'MeuTimer';
+  Timer.OnTimer  := TimerTimer;
+  Timer.Interval := 1000;
+  Timer.Enabled  := true;
+end;
+
+procedure TRelogioDigital.TimerTimer(Sender: TObject);
+begin
+    with Sender as TTimer do
+    begin
+      RefreshTime;
+    end;
+end;
+
+end.

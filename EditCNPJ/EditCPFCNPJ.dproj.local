@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2020/11/24 15:15:33.228,=rtl.dcp</Transaction>
+    <Transaction>2020/11/24 15:15:42.900,C:\Users\Arth\Documents\Embarcadero\Studio\Projects\EditCPFCNPJ.dproj=C:\Users\Arth\Documents\Embarcadero\Studio\Projects\Package1.dproj</Transaction>
+    <Transaction>2020/11/24 15:15:59.677,C:\Users\Arth\Desktop\Matheus\Projetos\Desktop\Delphi\Componentes\EditCNPJ\EditCPFCNPJ.dproj=C:\Users\Arth\Documents\Embarcadero\Studio\Projects\EditCPFCNPJ.dproj</Transaction>
+    <Transaction>2020/11/24 15:16:53.567,=C:\Users\Arth\Desktop\Matheus\Projetos\Desktop\Delphi\Componentes\EditCNPJ\EditCPFCNPJ.pas</Transaction>
+    <Transaction>2020/11/24 15:16:53.611,=vcl.dcp</Transaction>
+  </Transactions>
+</BorlandProject>
